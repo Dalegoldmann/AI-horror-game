@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-mono: 'Space Mono', 'Courier Prime', 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    background-color: #030303;
+    color: #e6e6e6;
+    overflow-x: hidden;
+  }
+}
+
+/* Subtle raster scanline texture for buttons and CRT feel */
+.scanlines-texture {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 0px,
+    rgba(0, 0, 0, 0.75) 1px,
+    rgba(25, 25, 25, 0.6) 1px,
+    rgba(25, 25, 25, 0.6) 2px
+  );
+  background-size: 100% 2px;
+}
+
+.subtle-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Breathing indicator keyframe */
+@keyframes breathGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 2px rgba(220, 38, 38, 0.4));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.9));
+  }
+}
+
+.animate-breath {
+  animation: breathGlow 3.6s ease-in-out infinite;
+}
+
+/* Fast tense breathing */
+.animate-breath-panic {
+  animation: breathGlow 1.2s ease-in-out infinite;
+}
+
+/* Atmospheric CRT vignette */
+.vignette-overlay {
+  background: radial-gradient(circle at 50% 20%, rgba(20, 20, 20, 0.3) 0%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 1) 100%);
+}

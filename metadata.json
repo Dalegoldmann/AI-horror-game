@@ -1,0 +1,7 @@
+{
+  "name": "Ten Breaths — Terminal Horror Narrative",
+  "description": "An atmospheric psychological horror interactive fiction in a retro terminal aesthetic where each breath determines survival.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
